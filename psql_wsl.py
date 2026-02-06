@@ -302,11 +302,22 @@ def main():
                     send_key("Return")
                     time.sleep(0.5)
                 
+                # 1. Print current date at the start
+                send_keys("\\! date")
+                send_key("Return")
+                time.sleep(0.5)
+
+                # 2. Run the actual query
                 limit = PAGE_SIZE_FIRST if page == 1 else PAGE_SIZE_REST
                 paginated_query = f"{QUERY} LIMIT {limit} OFFSET {offset};"
                 send_keys(paginated_query)
                 send_key("Return")
                 time.sleep(QUERY_WAIT)
+
+                # 3. Print current date at the end
+                send_keys("\\! date")
+                send_key("Return")
+                time.sleep(1.0) # Wait for terminal to render date before screenshot
                 
                 scr_now = datetime.now().strftime('%Y%m%d_%H%M')
                 screenshot_filename = f"{db_config['folder']}_RDS_{scr_now}_page_{page}.png"
