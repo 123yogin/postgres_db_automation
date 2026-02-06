@@ -1,0 +1,12 @@
+.git
+.jenkins
+output/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+.env
+Dockerfile
+.dockerignore
+wsl_setup.sh
