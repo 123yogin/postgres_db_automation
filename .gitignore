@@ -1,0 +1,18 @@
+# Environment variables
+.env
+
+# Local output directory (CSV exports and screenshots)
+output/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Logs
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
