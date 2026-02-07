@@ -15,7 +15,7 @@ load_dotenv()
 
 # ---------------- CONFIG ----------------
 DISPLAY_NUM = ":99"
-SCREEN_RESOLUTION = "1920x1080"
+SCREEN_RESOLUTION = "11520x6480"
 SCREEN_DEPTH = "24"
 
 # Global variables
@@ -107,7 +107,7 @@ def open_terminal():
     try:
         print("  Launching xfce4-terminal...", flush=True)
         terminal_process = subprocess.Popen([
-            "xfce4-terminal", "--maximize", "--title=PostgreSQL-Automation", "--font=Monospace 7"
+            "xfce4-terminal", "--maximize", "--title=PostgreSQL-Automation", "--font=Monospace 40"
         ], env={"DISPLAY": DISPLAY_NUM}, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         
         print("  Waiting 5s for terminal to initialize...", flush=True)
