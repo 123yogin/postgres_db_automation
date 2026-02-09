@@ -15,7 +15,7 @@ load_dotenv()
 
 # ---------------- CONFIG ----------------
 DISPLAY_NUM = ":99"
-SCREEN_RESOLUTION = "11520x6480"
+SCREEN_RESOLUTION = "7680x4320"
 SCREEN_DEPTH = "24"
 
 # Global variables
@@ -31,7 +31,7 @@ PAGE_SIZE_REST = 40
 QUERY_WAIT = 5.0 
 
 # Query to execute
-QUERY = "SELECT * FROM users"
+QUERY = "SELECT id, email, username, is_verified, is_active FROM users"
 
 # Database Connections
 DATABASES = [
@@ -107,7 +107,7 @@ def open_terminal():
     try:
         print("  Launching xfce4-terminal...", flush=True)
         terminal_process = subprocess.Popen([
-            "xfce4-terminal", "--maximize", "--title=PostgreSQL-Automation", "--font=Monospace 40"
+            "xfce4-terminal", "--maximize", "--title=PostgreSQL-Automation", "--font=Monospace 35"
         ], env={"DISPLAY": DISPLAY_NUM}, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         
         print("  Waiting 5s for terminal to initialize...", flush=True)
